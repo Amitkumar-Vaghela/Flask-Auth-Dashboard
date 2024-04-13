@@ -92,7 +92,8 @@ body {
 <body>
 <div class="container">
   <h1>User Registration</h1>
-  {% with messages = get_flashed_messages() %} {% if messages %}
+  {% with messages = get_flashed_messages() %}
+  {% if messages %}
   <ul>
     {% for message in messages %}
     <li class="{% if 'error' in message %}error{% elif 'success' in message %}success{% else %}default{% endif %}">
@@ -100,7 +101,8 @@ body {
     </li>
     {% endfor %}
   </ul>
-  {% endif %} {% endwith %}
+  {% endif %}
+  {% endwith %}
   <form method="post" action="{{ url_for('register') }}">
     <label for="username">Username:</label>
     <input type="text" name="username" required>
